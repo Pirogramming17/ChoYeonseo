@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
     <head>                      <!--css는 head에-->
         <meta charset="utf-8" /> <!--meta는 문서에 대한 정보를 나타내는 태그, 닫는 태그가 없어도 동작은 함-->
         <title>네이버</title>
@@ -8,8 +8,18 @@
     </head>
     <!--head는 부가적인 정보 body는 화면(즐겨찾기 아래 ~ 스크롤 가능 범위)-->
     <body>
-        <h1>네이버</h1>
+        <h1>
+            <a href="https://www.naver.com">네이버</a> <!--태그만으로 설명이 안되는 경우 속성(attribute)으로 설명-->
+        </h1>
         <h2>검색창</h2>
+        <fieldset>
+            <legend>검색</legend>
+            <input />
+            <!--input이 대표적으로 contents가 없어 바로 닫는 태그-->
+            <!-- 다른 input 종류: textarea 
+                다른 타입: checkbox, radio -->
+                <button>검색</button>
+        </fieldset>
         <h2>실시간 검색어</h2>
         <h3>로그인</h3>
         <h3>뉴스</h3>
