@@ -1,6 +1,15 @@
 /*선택자(selector) = html 태그 선택하기*/
 /*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
 
+/*.은 class, class는 id와 달리 중복 사용 가능*/
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
 /* div는 생략 가능, id = # */
 #header-center {
   margin: 0 auto;
