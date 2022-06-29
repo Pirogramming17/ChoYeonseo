@@ -27,6 +27,10 @@ h3 {
   display: inline-block;
 }
 
+.float-left {
+  float: left;
+}
+
 /* #fixed {
   /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)
   position: fixed;
@@ -349,11 +353,12 @@ main {
   margin-bottom: 8px;
 }
 
-#main-second-block .inline-block:first-child {
+#main-second-block .float-left:first-child {
   width: 740px;
+  margin-right: 8px;
 }
 
-#main-second-block .inline-block:last-child {
+#main-second-block .float-left:last-child {
   width: 330px;
   vertical-align: top;
 }
@@ -372,13 +377,18 @@ main {
   display: inline-block;
 }
 
+#main-second-block {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 8px;
+}
 #main-newsstand {
   display: inline-block;
   width: 740px;
   height: 246px;
   background: white;
   margin-right: 8px;
-  margin-bottom: 8px;
+  vertical-align: top;
 }
 
 #main-newsstand h3 {
@@ -429,7 +439,7 @@ main {
 #main-category {
   float: left;
   width: 740px;
-  height: 837px;
+  height: 900px;
   background: white;
   margin-bottom: 8px;
   margin-right: 8px;
@@ -437,10 +447,15 @@ main {
 
 #main-shopping {
   display: inline-block;
-  width: 332px;
-  height: 837px;
+  width: 330px;
+  height: 900px;
   background: white;
   margin-bottom: 8px;
+}
+
+#main-shopping iframe {
+  width: 95%;
+  height: 100%;
 }
 
 #main-third-block,
