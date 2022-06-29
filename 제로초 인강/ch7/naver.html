@@ -30,6 +30,8 @@
             <!--태그만으로 설명이 안되는 경우 속성(attribute)으로 설명-->
           </a>
           <h2 class="blind">검색창</h2>
+          <!-- form은 a 태그와 달리 버튼 -->
+          <form class="inline-block" action="https://search.naver.com/search.naver?sm=top_hty&fbm=0&ie=utf8&query=">
           <fieldset>
             <legend class="blind">검색</legend>
             <input />
@@ -42,6 +44,7 @@
               <span id="search-image"></span>
             </button>
           </fieldset>
+        </form>
         </div>
       </div>
     </header>
@@ -166,8 +169,21 @@
       <div id="main-centered" class="center-align">
         <div id="main-first-block">
           <div id="main-ad"></div>
-          <div id="main-login">로그인</div>
-        </div>
+
+          <div id="main-login">
+            <h3 class="blind">로그인</h3>
+          <div class="login-wrapper">
+            <span class="login-text">네이버를 더 안전하고 편리하게 이용하세요.</span>
+            <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https%3A%2F%2Fwww.naver.com">
+              <span class="blind">Naver 로그인</span>
+              <span class="login-image"></span>
+            </a>
+            <a
+            class="login-signup"
+            href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com"
+          >회원가입</a>
+          </div>
+          </div>
         <div id="main-second-block">
           <div class="float-left">
             <div id="main-ytn">
