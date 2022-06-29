@@ -127,10 +127,13 @@ nav li {
   display: inline-block;
 }
 
+/* css 우선순위: !important>inline style attribute>id>class>다른 attribute>tag element */
+/* class 개수 많은 것이 우선순위 , pseudo class (꾸며주는 class)가 많을수록 우선순위가 많음*/
+
 nav li:first-child span:first-child {
   width: 25px;
   background-position: 0 -285px;
-  margin-left: 0;
+  margin-left: 0; /*깜빡하고 4-5강 초반 부분까지 듣고 4-4강 commit을 해서 내용이 겹칩니다(margin-left 적용 부분)*/
 }
 
 nav li span:first-child {
