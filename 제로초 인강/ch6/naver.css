@@ -17,6 +17,16 @@ body {
   font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
 /* #fixed {
   /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)
   position: fixed;
@@ -311,7 +321,7 @@ main {
 }
 
 #main-centered {
-  padding: 8px 10px 0;
+  padding: 8px 10px;
   width: 1100px;
 }
 
@@ -337,6 +347,15 @@ main {
   margin-bottom: 8px;
 }
 
+#main-second-block .inline-block:first-child {
+  width: 740px;
+}
+
+#main-second-block .inline-block:last-child {
+  width: 330px;
+  vertical-align: top;
+}
+
 #main-ytn {
   display: inline-block;
   width: 740px;
@@ -344,6 +363,11 @@ main {
   background: white;
   margin-right: 8px;
   margin-bottom: 8px;
+}
+
+#main-ytn h3,
+#main-ytn ol {
+  display: inline-block;
 }
 
 #main-newsstand {
@@ -355,6 +379,33 @@ main {
   margin-bottom: 8px;
 }
 
+#main-newsstand h3 {
+  height: 45px;
+  border-bottom: 1px solid #ebeef3;
+}
+
+#main-newsstand ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#main-newsstand li {
+  float: left;
+  width: 246px;
+  height: 67px;
+  border-right: 1px solid #f1f3f6;
+  border-bottom: 1px solid #f1f3f6;
+  text-align: center;
+}
+
+#main-newsstand li img {
+  position: relative;
+  top: 50%;
+  transform: translateY(
+    -50%
+  ); /*가로 가운데정렬은 부모가 세로 가운데정렬은 자식이*/
+}
 #main-weather {
   display: inline-block;
   width: 332px;
@@ -372,10 +423,12 @@ main {
 }
 
 #main-category {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+  margin-right: 8px;
 }
 
 #main-shopping {
@@ -383,18 +436,26 @@ main {
   width: 332px;
   height: 837px;
   background: white;
+  margin-bottom: 8px;
+}
+
+#main-third-block,
+#main-fourth-block {
+  display: inline-block;
+  width: 100%;
 }
 
 #main-event {
-  display: inline-block;
+  float: left;
   width: 740px;
   height: 130px;
   background: white;
   vertical-align: top;
+  margin-right: 8px;
 }
 
 #main-third-ad {
-  display: inline-block;
+  float: left;
   width: 332px;
   height: 130px;
   background: #555;
