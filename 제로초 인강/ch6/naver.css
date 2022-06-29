@@ -1,0 +1,311 @@
+/*선택자(selector) = html 태그 선택하기*/
+/*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
+
+/* 모든 태그에 적용 => * */
+/* div는 생략 가능, id = # */
+/* .은 class, class는 id와 달리 중복 사용 가능 */
+
+* {
+  box-sizing: border-box; /*border&contents&padding 합친 border 기준 계산=> border box*/
+}
+
+/*브라우저 기본 여백 없애기*/
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
+}
+
+/* #fixed {
+  /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 50px;
+} */
+
+.blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+.relative {
+  position: relative;
+}
+
+.center-align {
+  margin: 0 auto;
+  width: 1080px; /*px은 상대적인 단위. 모니터(=해상도)마다 다름*/
+}
+
+#header {
+  height: 170px;
+}
+
+#header-top {
+  float: right;
+  margin-top: 8px;
+}
+
+#header-top span {
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
+
+#header-search {
+  clear: both;
+  padding-top: 12px;
+}
+
+#header-search a {
+  text-decoration: none; /*a 태그는 밑줄이 생길 수 있는데 없애는 방법*/
+}
+
+/*header-search div 내 자식태그인 h1 선택 방법*/
+/*cf. 자손태그 선택방법: ex) header-search(space) h1,  자식도 자손이므로 이렇게 해도 상관x*/
+
+#header-search h1 {
+  width: 198px;
+  height: 48px;
+  display: inline-block; /*margin 없애는 방법*/
+
+  /* background-image: url("./sp_search.png");
+  background-position: -4px -10px;
+  background-repeat: no-repeat; */
+  /*글자만 안보이게 하는 방법 1: span으로 감싸기, 방법2: overflow: hidden;*/
+
+  /*한번에 쓰는 코드*/
+  background: url("./sp_search.png") -4px -4px no-repeat;
+  vertical-align: middle;
+  position: relative; /* relative의 컨테이닝 블록: static일 때의 현재 위치를 기준으로 이동*/
+  top: -5px;
+  left: 1px;
+}
+
+#header-search h1 span {
+  /*자손태그명 오류 3-4강 commit에서 수정함(span 태그로 추가)*/
+  display: none;
+}
+
+#header-search h2 {
+  display: none; /*눈에 안보이게 (cf. blind: screen reader에는 보이게)*/
+}
+
+#header-search fieldset {
+  margin-left: 18px;
+  padding: 12px 0 12px 10px; /*순서: 위 오른쪽 아래쪽 왼쪽 (시계방향) */
+  width: 521px;
+  height: 49px;
+  display: inline-block;
+  border: 2px solid #03cf5d; /*HEX 표기법*/
+  position: relative; /*button의 컨테이닝 블록이 되기 위해 static에서 relative로 바꿔줌*/
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: top;
+  width: 385px;
+  height: 23px;
+  margin-right: 10px;
+}
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+  position: absolute; /*absolute의 컨테이닝 블록: 화면을 기준으로 이동. 즉, 가장 가까운 조상의 내부 영역 기준(꼭 부모가 아닐수도)*/
+  right: -2px;
+  top: -2px;
+}
+
+#search-keyboard {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-position: -33px -60px;
+  width: 19px;
+  height: 11px;
+  display: inline-block;
+  margin: 0 5px; /* 좌우, 상하가 같은 경우 줄여쓰기 가능*/
+  vertical-align: middle;
+}
+
+#search-history {
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_search.svg);
+  background-position: -87px -60px;
+  width: 9px;
+  height: 3px;
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+#search-image {
+  background-image: url("./sp_search.png");
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  margin: 14px;
+}
+
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
+}
+
+nav ul {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 0 0 4px;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+/* css 우선순위: !important>inline style attribute>id>class>다른 attribute>tag element */
+/* class 개수 많은 것이 우선순위 , pseudo class (꾸며주는 class)가 많을수록 우선순위가 많음*/
+
+nav li:first-child span:first-child {
+  width: 25px;
+  background-position: 0 -285px;
+  margin-left: 0; /*깜빡하고 4-5강 초반 부분까지 듣고 4-4강 commit을 해서 내용이 겹칩니다(margin-left 적용 부분)*/
+}
+
+nav li span:first-child {
+  /*공동되는 부분 뽑기*/
+  height: 16px;
+  display: inline-block;
+  background-image: url(https://s.pstatic.net/static/www/img/uit/2019/sp_nav.png);
+  background-repeat: no-repeat;
+  margin-left: 14px;
+}
+
+/*유지보수 차원에서는 nth-child보다 class 주는 방법이 낫다*/
+nav li:nth-child(2) span:first-child {
+  width: 27px;
+  background-position: -279px -52px;
+}
+
+nav li:nth-child(3) span:first-child {
+  width: 40px;
+  background-position: -100px -182px;
+}
+
+nav li:nth-child(4) span:first-child {
+  width: 40px;
+  background-position: -101px -156px;
+}
+
+nav li:nth-child(5) span:first-child {
+  width: 26px;
+  background-position: -279px -156px;
+}
+
+nav li:nth-child(6) span:first-child {
+  width: 25px;
+  background-position: -70px -285px;
+}
+
+nav li:nth-child(7) span:first-child {
+  width: 35px;
+  background-position: -125px -130px;
+}
+
+nav li:nth-child(8) span:first-child {
+  width: 26px;
+  background-position: -279px -208px;
+}
+
+nav li:nth-child(9) span:first-child {
+  width: 26px;
+  background-position: -128px -104px;
+}
+
+nav li:nth-child(10) span:first-child {
+  width: 26px;
+  background-position: -36px -259px;
+}
+
+nav li:nth-child(11) span:first-child {
+  width: 39px;
+  background-position: -151px -156px;
+}
+
+nav li:nth-child(12) span:first-child {
+  width: 26px;
+  background-position: -279px -130px;
+}
+
+nav li:nth-child(13) span:first-child {
+  width: 26px;
+  background-position: -234px -233px;
+}
+
+nav li:nth-child(14) span:first-child {
+  width: 26px;
+  background-position: -72px -259px;
+}
+
+nav li:nth-child(15) span:first-child {
+  width: 13px;
+  background-position: -140px -78px;
+}
+
+nav li:nth-child(16) span:first-child {
+  width: 26px;
+  background-position: -279px 0;
+}
+
+nav li.more:first-child span:first-child {
+  width: 55px;
+  background-position: 0 -104px;
+}
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
+}
+
+#rank-title {
+  letter-spacing: -1px;
+  font-size: 14px;
+}
+
+main {
+  background-color: #f2f4f7;
+  display: inline-block;
+  width: 100%;
+}
