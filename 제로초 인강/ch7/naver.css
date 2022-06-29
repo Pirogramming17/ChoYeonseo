@@ -326,6 +326,24 @@ nav ul {
   position: absolute;
   top: -15px;
   right: 0;
+  z-index: 100;
+}
+
+/*z-index test code*/
+#z-example {
+  position: absolute;
+  background: yellow;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+#z-inner {
+  position: absolute;
+  background: red;
+  width: 50px;
+  height: 50px;
+  z-index: 1000; /*단순히 z 인덱스만 보면 더 높아야하지만 z-index가 낮은 관계에서의 자식이므로 x*/
 }
 
 #rank-number {
