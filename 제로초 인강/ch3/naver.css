@@ -1,6 +1,12 @@
 /*선택자(selector) = html 태그 선택하기*/
 /*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
 
+/* 모든 태그에 적용 => * */
+
+* {
+  box-sizing: border-box; /*border&contents&padding 합친 border 기준 계산=> border box*/
+}
+
 /*.은 class, class는 id와 달리 중복 사용 가능*/
 
 .blind {
@@ -30,6 +36,7 @@
   width: 198px;
   height: 48px;
   display: inline-block; /*margin 없애는 방법*/
+  vertical-align: middle;
 
   /* background-image: url("./sp_search.png");
   background-position: -4px -10px;
@@ -54,5 +61,12 @@
   width: 521px;
   height: 49px;
   display: inline-block;
-  border: 2px solid #03cf5d;
+  border: 2px solid #03cf5d; /*HEX 표기법*/
+}
+
+#header-search fieldset input {
+  border: none;
+  padding: 0;
+  outline: none;
+  vertical-align: middle;
 }
