@@ -36,7 +36,6 @@
   width: 198px;
   height: 48px;
   display: inline-block; /*margin 없애는 방법*/
-  vertical-align: middle;
 
   /* background-image: url("./sp_search.png");
   background-position: -4px -10px;
@@ -45,6 +44,9 @@
 
   /*한번에 쓰는 코드*/
   background: url("./sp_search.png") -4px -4px no-repeat;
+  vertical-align: middle;
+  position: relative;
+  top: -6px;
 }
 
 #header-search h1 span {
@@ -63,13 +65,16 @@
   height: 49px;
   display: inline-block;
   border: 2px solid #03cf5d; /*HEX 표기법*/
+  position: relative;
 }
 
 #header-search fieldset input {
   border: none;
   padding: 0;
   outline: none;
-  vertical-align: middle;
+  vertical-align: top;
+  width: 405px;
+  height: 23px;
 }
 
 #header-search fieldset button {
@@ -78,6 +83,9 @@
   border: none;
   padding: 0;
   background: #03cf5d;
+  position: absolute; /*block format context, 쌓임 맥락 등 규칙 주의*/
+  right: -2px;
+  top: -2px;
 }
 
 #search-image {
