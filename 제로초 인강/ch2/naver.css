@@ -1,0 +1,8 @@
+/*선택자(selector) = html 태그 선택하기*/
+/*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
+
+/* div는 생략 가능, id = # */
+#header-center {
+  margin: 0 auto;
+  width: 1080px;
+}
