@@ -4,5 +4,21 @@
 /* div는 생략 가능, id = # */
 #header-center {
   margin: 0 auto;
-  width: 1080px;
+  width: 1080px; /*px은 상대적인 단위. 모니터(=해상도)마다 다름*/
+}
+
+/*header-search div 내 자식태그인 h1 선택 방법*/
+/*cf. 자손태그 선택방법: ex) header-search(space) h1,  자식도 자손이므로 이렇게 해도 상관x*/
+#header-search > h1 {
+  width: 280px;
+  display: inline-block; /*margin 없애는 방법*/
+}
+
+#header-search h2 {
+  display: none; /*눈에 안보이게 하는 속성*/
+}
+
+#header-search fieldset {
+  width: 520px;
+  display: inline-block;
 }
