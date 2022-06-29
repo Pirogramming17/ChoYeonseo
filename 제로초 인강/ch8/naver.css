@@ -5,32 +5,6 @@
 /* div는 생략 가능, id = # */
 /* .은 class, class는 id와 달리 중복 사용 가능 */
 
-* {
-  box-sizing: border-box; /*border&contents&padding 합친 border 기준 계산=> border box*/
-}
-
-/*브라우저 기본 여백 없애기*/
-html,
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
-}
-
-h1,
-h2,
-h3 {
-  margin: 0;
-}
-
-.inline-block {
-  display: inline-block;
-}
-
-.float-left {
-  float: left;
-}
-
 /* #fixed {
   /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)
   position: fixed;
@@ -529,6 +503,10 @@ main {
 #main-shopping iframe {
   width: 95%;
   height: 100%;
+  border: none;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 }
 
 #main-third-block,
@@ -666,4 +644,8 @@ main {
   background-image: url("./sp_themecast.png");
   background-repeat: no-repeat;
   background-position: -320px -52px;
+}
+
+#section {
+  border: 1px solid #dee3eb;
 }

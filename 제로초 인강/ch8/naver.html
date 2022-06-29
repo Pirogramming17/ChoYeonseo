@@ -7,6 +7,30 @@
     <title>네이버</title>
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
     <link rel="stylesheet" href="./naver.css" />
+    <link rel="stylesheet" href="./webfont.css">
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+  
+      html, body {
+        margin: 0;
+        padding: 0;
+        font-family: Dotum, '돋움', Helvetica, "Apple SD Gothic Neo", sans-serif;
+      }
+  
+      h1, h2, h3, h4, h5, h6 {
+        margin: 0;
+      }
+  
+      .inline-block {
+        display: inline-block;
+      }
+  
+      .float-left {
+        float: left;
+      }
+    </style>
   </head>
   <!--head는 부가적인 정보 body는 화면(즐겨찾기 아래 ~ 스크롤 가능 범위)-->
 
@@ -168,9 +192,10 @@
     <main>
       <div id="main-centered" class="center-align">
         <div id="main-first-block">
-          <div id="main-ad"></div>
-
-          <div id="main-login">
+          <section id="main-ad">
+            <h3 class="blind">광고</h3>
+          </section>
+          <section id="main-login">
             <h3 class="blind">로그인</h3>
           <div class="login-wrapper">
             <span class="login-text">네이버를 더 안전하고 편리하게 이용하세요.</span>
@@ -183,17 +208,17 @@
             href="https://nid.naver.com/nidregister.form?url=https%3A%2F%2Fwww.naver.com"
           >회원가입</a>
           </div>
-          </div>
+        </section>
         <div id="main-second-block">
           <div class="float-left">
-            <div id="main-ytn">
+            <section id="main-ytn">
               <h3>연합뉴스</h3>
               <ol>
                 <!--ol:ordered list-->
                 <li>충격)</li>
               </ol>
-            </div>
-            <div id="main-newsstand">
+            </section>
+            <section id="main-newsstand">
               <h3>뉴스스탠드</h3>
               <ul>
                 <li><img src="./미디어오늘.png" alt="미디어오늘" /></li>
@@ -206,15 +231,19 @@
                 <li><img src="./국민일보.png" alt="국민일보" /></li>
                 <li><img src="./머니투데이.png" alt="머니투데이" /></li>
               </ul>
-            </div>
+            </section>
           </div>
           <div class="float-left">
-            <div id="main-weather"></div>
-            <div id="main-second-ad"></div>
+            <section id="main-weather">
+              <h3 class="blind">날씨</h3>
+            </section>
+            <section id="main-second-ad">
+              <h3 class="blind">광고</h3>
+            </section>
           </div>
         </div>
         <div id="main-third-block">
-          <div id="main-category">
+          <section id="main-category">
             <h3 class="blind">주제별보기</h3>
             <div id="main-category-top">
               <button id="subject-all">
@@ -250,20 +279,22 @@
                 <span></span>
               </button>
             </div>
-          </div>
-          <div id="main-shopping">
+          </section>
+          <section id="main-shopping">
+            <h3 class="blind">쇼핑</h3>
             <iframe
               src="https://castbox.shopping.naver.com/shopbox/main.nhn?"
-              frameborder="0"
               scrolling="no"
             ></iframe>
-          </div>
+          </section>
         </div>
         <div id="main-fourth-block">
-          <div id="main-event">
+          <section id="main-event">
             <h3>이벤트</h3>
-          </div>
-          <div id="main-third-ad"></div>
+          </section>
+          <section id="main-third-ad">
+            <h3 class="blind">광고</h3>
+          </section>
         </div>
       </div>
     </main>
