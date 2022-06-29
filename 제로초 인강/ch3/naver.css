@@ -2,6 +2,7 @@
 /*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
 
 /*.은 class, class는 id와 달리 중복 사용 가능*/
+
 .blind {
   position: absolute;
   overflow: hidden;
@@ -10,17 +11,37 @@
   width: 1px;
   height: 1px;
 }
+
 /* div는 생략 가능, id = # */
+
 #header-center {
   margin: 0 auto;
   width: 1080px; /*px은 상대적인 단위. 모니터(=해상도)마다 다름*/
 }
 
+#header-search a {
+  text-decoration: none; /*a 태그는 밑줄이 생길 수 있는데 없애는 방법*/
+}
+
 /*header-search div 내 자식태그인 h1 선택 방법*/
 /*cf. 자손태그 선택방법: ex) header-search(space) h1,  자식도 자손이므로 이렇게 해도 상관x*/
-#header-search > h1 {
-  width: 280px;
+
+#header-search h1 {
+  width: 198px;
+  height: 48px;
   display: inline-block; /*margin 없애는 방법*/
+
+  /* background-image: url("./sp_search.png");
+  background-position: -4px -10px;
+  background-repeat: no-repeat; */
+  /*글자만 안보이게 하는 방법 1: span으로 감싸기, 방법2: overflow: hidden;*/
+
+  /*한번에 쓰는 코드*/
+  background: url("./sp_search.png") -4px -4px no-repeat;
+}
+
+#header-search span {
+  display: none;
 }
 
 #header-search h2 {
@@ -28,6 +49,10 @@
 }
 
 #header-search fieldset {
-  width: 520px;
+  margin-left: 20px;
+  padding: 12px 0 12px 10px; /*순서: 위 오른쪽 아래쪽 왼쪽 (시계방향) */
+  width: 521px;
+  height: 49px;
   display: inline-block;
+  border: 2px solid #03cf5d;
 }
