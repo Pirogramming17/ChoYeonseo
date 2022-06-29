@@ -45,7 +45,7 @@
   /*한번에 쓰는 코드*/
   background: url("./sp_search.png") -4px -4px no-repeat;
   vertical-align: middle;
-  position: relative;
+  position: relative; /* relative: static일 때의 현재 위치를 기준으로 이동하는 개념*/
   top: -6px;
 }
 
@@ -65,7 +65,7 @@
   height: 49px;
   display: inline-block;
   border: 2px solid #03cf5d; /*HEX 표기법*/
-  position: relative;
+  position: relative; /*button을 붙여주기 위해 static에서 relative로 바꿔줌*/
 }
 
 #header-search fieldset input {
@@ -83,7 +83,7 @@
   border: none;
   padding: 0;
   background: #03cf5d;
-  position: absolute; /*block format context, 쌓임 맥락 등 규칙 주의*/
+  position: absolute; /*absolute: 화면을 기준으로 이동. 즉, 가장 가까운 조상의 내부 영역 기준*/
   right: -2px;
   top: -2px;
 }
