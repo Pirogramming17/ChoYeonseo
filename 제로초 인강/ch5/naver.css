@@ -2,6 +2,8 @@
 /*css에서는 부모 태그의 스타일을 자식 태그가 덮어씀 */
 
 /* 모든 태그에 적용 => * */
+/* div는 생략 가능, id = # */
+/* .은 class, class는 id와 달리 중복 사용 가능 */
 
 * {
   box-sizing: border-box; /*border&contents&padding 합친 border 기준 계산=> border box*/
@@ -12,6 +14,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: Dotum, "돋움", Helvetica, "Apple SD Gothic Neo", sans-serif;
 }
 
 /* #fixed {
@@ -26,8 +29,6 @@ body {
   border-radius: 50px;
 } */
 
-/* .은 class, class는 id와 달리 중복 사용 가능 */
-
 .blind {
   position: absolute;
   overflow: hidden;
@@ -37,15 +38,22 @@ body {
   height: 1px;
 }
 
-/* div는 생략 가능, id = # */
+.relative {
+  position: relative;
+}
 
 .center-align {
   margin: 0 auto;
   width: 1080px; /*px은 상대적인 단위. 모니터(=해상도)마다 다름*/
 }
 
+#header {
+  height: 170px;
+}
+
 #header-top {
   float: right;
+  margin-top: 8px;
 }
 
 #header-top span {
@@ -55,9 +63,13 @@ body {
   line-height: 22px;
 }
 
+#header-search {
+  clear: both;
+  padding-top: 12px;
+}
+
 #header-search a {
   text-decoration: none; /*a 태그는 밑줄이 생길 수 있는데 없애는 방법*/
-  clear: both;
 }
 
 /*header-search div 내 자식태그인 h1 선택 방법*/
@@ -77,7 +89,8 @@ body {
   background: url("./sp_search.png") -4px -4px no-repeat;
   vertical-align: middle;
   position: relative; /* relative의 컨테이닝 블록: static일 때의 현재 위치를 기준으로 이동*/
-  top: -6px;
+  top: -5px;
+  left: 1px;
 }
 
 #header-search h1 span {
@@ -90,7 +103,7 @@ body {
 }
 
 #header-search fieldset {
-  margin-left: 20px;
+  margin-left: 18px;
   padding: 12px 0 12px 10px; /*순서: 위 오른쪽 아래쪽 왼쪽 (시계방향) */
   width: 521px;
   height: 49px;
@@ -129,9 +142,16 @@ body {
   margin: 14px;
 }
 
+nav {
+  height: 46px;
+  border-top: 1px solid #f1f3f6;
+  border-bottom: 1px solid #d1d8e4;
+}
+
 nav ul {
+  display: inline-block;
   margin: 0;
-  padding: 0;
+  padding: 5px 0 0 4px;
   list-style: none;
 }
 
@@ -181,4 +201,24 @@ nav li:nth-child(5) span:first-child {
 nav li:nth-child(6) span:first-child {
   width: 25px;
   background-position: -70px -285px;
+}
+
+.nav-divider {
+  display: inline-block;
+  margin: 18px 16px 0;
+  width: 1px;
+  height: 14px;
+  background: #ebeef3;
+}
+
+#search-ranking {
+  position: absolute;
+  top: 16px;
+  right: 100px;
+}
+
+#rank-number {
+  margin-top: -9px;
+  color: #00ab33;
+  font-size: 16px;
 }
