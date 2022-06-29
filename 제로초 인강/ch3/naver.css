@@ -7,7 +7,7 @@
   box-sizing: border-box; /*border&contents&padding 합친 border 기준 계산=> border box*/
 }
 
-/*.은 class, class는 id와 달리 중복 사용 가능*/
+/* .은 class, class는 id와 달리 중복 사용 가능 */
 
 .blind {
   position: absolute;
@@ -47,7 +47,7 @@
   background: url("./sp_search.png") -4px -4px no-repeat;
 }
 
-#header-search span {
+#header-search h1 span {
   display: none;
 }
 
@@ -69,4 +69,22 @@
   padding: 0;
   outline: none;
   vertical-align: middle;
+}
+
+#header-search fieldset button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  padding: 0;
+  background: #03cf5d;
+}
+
+#search-image {
+  background-image: url("./sp_search.png");
+  background-position: -3px -60px;
+  background-repeat: no-repeat;
+  width: 21px;
+  height: 21px;
+  display: inline-block;
+  margin: 14px;
 }
