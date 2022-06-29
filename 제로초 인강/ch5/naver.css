@@ -14,8 +14,8 @@ body {
   padding: 0;
 }
 
-#fixed {
-  /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)*/
+/* #fixed {
+  /*fixed가 position인 경우 컨테이닝 블록은 화면(뷰포트)
   position: fixed;
   top: 50px;
   right: 50px;
@@ -24,7 +24,7 @@ body {
   height: 100px;
   border: 1px solid black;
   border-radius: 50px;
-}
+} */
 
 /* .은 class, class는 id와 달리 중복 사용 가능 */
 
@@ -44,8 +44,20 @@ body {
   width: 1080px; /*px은 상대적인 단위. 모니터(=해상도)마다 다름*/
 }
 
+#header-top {
+  float: right;
+}
+
+#header-top span {
+  color: #888;
+  letter-spacing: -1px;
+  font-size: 11px;
+  line-height: 22px;
+}
+
 #header-search a {
   text-decoration: none; /*a 태그는 밑줄이 생길 수 있는데 없애는 방법*/
+  clear: both;
 }
 
 /*header-search div 내 자식태그인 h1 선택 방법*/
