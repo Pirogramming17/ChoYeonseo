@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap Clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar fixed-top navbar-expand-lg bg-dark navbar-dark text-light">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <a class="navbar-brand" href="#">Pirogramming</a>
+          <a class="navbar-name text-decoration-none text-info mx-5" href="#"
+            >Yeonseo-Jo</a
+          >
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#Intro">Intro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Highlights">highlights</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Contact">Contact</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <button
+                type="button"
+                class="btn btn-outline-success border-info text-info"
+                data-bs-toggle="modal"
+                data-bs-target="#AboutModal"
+              >
+                About
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="main">
+        <div
+          class="d-flex flex-column align-items-center justify-content-center vh-100"
+        >
+          <h1 class="fw-bold">Pirogramming 17</h1>
+          <span>Cheer up!</span>
+          <hr
+            class="bg-dark text-dark mt-4 mb-2"
+            style="width: 80%; height: 3px; border: none"
+          />
+          <a class="btn btn-primary m-0" href="#Intro" role="button">Get Started</a>
+        </div>
+      </section>
+
+      <section id="Intro">
+        <div
+          class="d-flex flex-column align-items-center justify-content-center vh-100 bg-secondary"
+        >
+          <div
+            class="container align-items-center justify-content-center text-center m-7"
+          >
+            <h1 class="text-danger fw-bold">Built On the Bootstrap Grid</h1>
+            <p class="text-white m-3">
+              Bootstap's responsive grid comes in 4 sizes or "breakpoints":
+              tiny(xs), small(sm), medium(md) and large(lg). These 4 grid sizes
+              enables you create responsive layouts that behave accordingly on
+              different sizes.
+            </p>
+            <a class="btn btn-light mt-3" href="#Highlights" role="button">Learn more</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="Highlights">
+        <div
+          class=" bg-dark"
+        >
+          <h1 class="text-primary text-center pt-3">Flexible Layouts</h1>
+          <hr
+            class="bg-light text-light mt-2 mb-2"
+            style="width: 100%; height: 3px; border: none"
+          />
+          <div
+            class="container-fluid row text-light text-center mx-2"
+          >
+            <div class="col-lg-4">
+              <i class="bi bi-display" style="font-size: 10rem"></i>
+              <h3>Responsive</h3>
+              <p>Your site looks good everywhere</p>
+            </div>
+            <div class="col-lg-4">
+              <i class="bi bi-display" style="font-size: 10rem"></i>
+              <h3>Customizable</h3>
+              <p>Easy to theme and customize with SASS</p>
+            </div>
+            <div class="col-lg-4">
+              <i class="bi bi-star" style="font-size: 10rem"></i>
+              <h3>Consistent</h3>
+              <p>A mature, well-tested, stable codebase</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+      <section id="Gallery" class="row bg-dark p-3 text-center">
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum1/250/300" alt="" />
+        </div>
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum2/250/300" alt="" />
+        </div>
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum3/250/300" alt="" />
+        </div>
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum4/250/300" alt="" />
+        </div>
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum5/250/300" alt="" />
+        </div>
+        <div class="col-lg-4 col-md-6 pb-3">
+          <img src="https://picsum.photos/seed/picsum6/250/300" alt="" />
+        </div>
+      </section>
+      <section id="Contact">
+        <div
+          class="wh-100 d-flex flex-column align-items-center justify-content-center bg-secondary"
+        >
+          <h1 class="fw-bold text-primary mt-4">Get in Touch</h1>
+          <hr
+            class="bg-dark text-dark mt-3 mb-2"
+            style="width: 90%; height: 3px; border: none"
+          />
+        </div>
+        <div class="row bg-secondary px-5 pt-4 py-3">
+          <div class="col-lg-4 col-md-12 py-3">
+            <input type="text" class="form-control" id="NameForm" placeholder="Name">
+          </div>
+          <div class="col-lg-4 col-md-12 py-3">
+            <input type="email" class="form-control" id="EmailForm" placeholder="Email">
+          </div>
+          <div class="col-lg-4 col-md-12 py-3">
+            <input type="text" class="form-control" id="PhoneForm" placeholder="Phone">
+          </div>
+        </div>
+        <div class="row bg-secondary px-5 pb-3">
+          <div>
+          <textarea class="form-control" id="FormControlTextarea1" rows="10" placeholder="Your message here.."></textarea>
+          </div>
+        </div>
+        <div class=" bg-secondary text-center px-3 pt-3 pb-5">
+          <div>
+            <button class="btn btn-primary btn-lg" type="submit" style="width:20rem;" data-bs-toggle="modal"
+            data-bs-target="#ContactModal">Send</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container-fluid bg-dark px-5 py-3">
+        <div class="row d-flex justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <h5 class="text-info" >Information</h5>
+            <ul class="text-white list-unstyled">
+              <li>Product</li>
+              <li>Services</li>
+              <li>Benefits</li>
+              <li>Developer</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h5 class="text-info" >About</h5>
+            <ul class="text-white list-unstyled">
+              <li>Contact us</li>
+              <li>Delivery Information</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <h5 class="text-info" >Stay Posted</h5>
+            <div class="py-2">
+              <input type="email" class="form-control" id="SubscribeForm" placeholder="Tell us your email">
+            </div>
+            <button class="btn btn-primary" type="submit" data-bs-toggle="modal"
+            data-bs-target="#ContactModal">Subscribe for updates</button>
+          </div>
+        </div>
+        <div class="text-secondary pt-5 pb-3"> Bootstrap ⓒ 2022 Pirogramming17</div>
+      </div>
+    </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="AboutModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content bg-secondary text-light text-center">
+          <div class="modal-header">
+            <h5
+              class="modal-title text-center"
+              id="staticBackdropLabel"
+              style="float: none; margin: 0 auto"
+            >
+              피로그래밍 17기
+            </h5>
+          </div>
+          <div class="modal-body">
+            <h3>파이팅!</h3>
+            <p>
+              모두들 아르샤 하시느라 수고 많으셨습니다! <br />
+              힘들더라도 끝나면 남는게 많을 겁니다 <br />
+              남은 세션들도 힘내서 열심히 해봐요!
+            </p>
+          </div>
+          <div class="modal-footer">
+            <a href="#" class="text-decoration-none">Download</a>
+            <button
+              type="button"
+              class="btn btn-primary bg-info text-blacky"
+              data-bs-dismiss="modal"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="modal fade" id="ContactModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <h5
+              class="modal-title text-center"
+              id="staticBackdropLabel"
+              style="float: none; margin: 0 auto"
+            >
+              Nice Job!
+            </h5>
+          </div>
+          <div class="modal-body">
+            You clicked the button, but it doesn't<br/>
+             actually go anywhere
+            <div class="text-info py-3">
+              Learn more at Bootstrap
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary " data-bs-dismiss="modal" style="width: 100%;">OK</button>
+          </div>
+        </div>
+      </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
