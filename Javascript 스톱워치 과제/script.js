@@ -7,7 +7,7 @@ const $clearBtn = document.querySelector(".clearBtn");
 const $recordList = document.querySelector(".recordList");
 const $allCheck = document.querySelector(".allCheckBox");
 
-let timer;
+let IntervalID;
 let sec = 0;
 let milSec = 0;
 
@@ -24,50 +24,63 @@ increTime = function () {
 };
 
 $startBtn.addEventListener("click", function () {
-  clearInterval(timer);
-  timer = setInterval(increTime, 10);
+  clearInterval(IntervalID);
+  IntervalID = setInterval(increTime, 10);
 });
 
 $stopBtn.addEventListener("click", function () {
-  clearInterval(timer);
+  clearInterval(IntervalID);
 
+  let container = document.createElement("div");
   let checkBox = document.createElement("input");
   checkBox.setAttribute("type", "checkbox");
-  checkBox.setAttribute("class", "checkbox");
+  checkBox.setAttribute("class", "checkBox");
+
   let timeRecord = document.createElement("li");
+  timeRecord.setAttribute("class", "timeRecord");
   timeRecord.innerHTML = $secTime.innerHTML + $milTime.innerHTML;
 
-  $recordList.appendChild(checkBox);
-  $recordList.appendChild(timeRecord);
+  container.appendChild(checkBox);
+  container.appendChild(timeRecord);
+  $recordList.appendChild(container);
 });
 
 $resetBtn.addEventListener("click", function () {
-  clearInterval(timer);
+  clearInterval(IntervalID);
   sec = 0;
   milSec = 0;
   $secTime.innerHTML = "00:";
   $milTime.innerHTML = "00";
 });
 
-function selectAll(selectAll) {
-  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-  checkboxes.forEach((checkbox) => {
-    checkbox.checked = selectAll.checked;
-  });
-}
+selectAll = function () {
+  let checkedBox = document.querySelectorAll("input[type='checkbox']");
+  if ($allCheck.checked) {
+    for (let i = 0; i < checkedBox.length; i++) {
+      checkedBox[i].checked = true;
+    }
+  } else {
+    for (var i = 0; i < checkedBox.length; i++) {
+      checkedBox[i].checked = false;
+    }
+  }
+};
 
 $allCheck.addEventListener("click", function () {
-  selectAll(this);
+  selectAll();
 });
 
-// clearList = function () {
-//   const clear = document.querySelectorAll('input[type="checkbox"]');
-//   if ((clear.checked = true)) {
-//     clear.parentElement.parentElement.remove();
-//   }
-// };
+clearRecord = function () {
+  let checkedBox = document.querySelectorAll("input[type='checkbox']");
+  for (var i = 0; i < checkedBox.length; i++) {
+    if (checkedBox[i] != $allCheck) {
+      if (checkedBox[i].checked) {
+        checkedBox[i].parentElement.remove();
+      }
+    }
+  }
+};
 
-// $clearBtn.addEventListener("click", function () {
-//   clearList();
-// });
+$clearBtn.addEventListener("click", function () {
+  clearRecord();
+});
