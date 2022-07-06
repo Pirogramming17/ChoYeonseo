@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stopwatch</title>
+    <style>
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 500px;
+        background-color: dimgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="clock">
+        <span class="secTime">00:</span><span class="milTime">00</span>
+      </div>
+      <div class="button">
+        <button class="startBtn">start</button
+        ><button class="stopBtn">stop</button
+        ><button class="resetBtn">reset</button>
+      </div>
+      <div
+        class="record"
+        style="border: 1px solid black; margin: 10px; height: 100px; width: 90%"
+      >
+        <div class="record-title" style="display: align-black">
+          <input class="allCheckBox" type="checkbox" />
+          <span> 구간 기록 </span>
+          <button class="clearBtn">clear</button>
+        </div>
+        <ul class="recordList"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
