@@ -16,10 +16,10 @@ while True:
     
     for i in range(p1):
         num += 1
-        if num > 31:
-            print("playerB win!")
-            continue  
         print("player A :", num)
+        if num >= 31:
+            print("playerB win!")
+            break 
         
     if num >= 31:
         break
@@ -40,10 +40,10 @@ while True:
     
     for j in range(p2):
         num+=1
-        if num > 31:
-            print("playerA win!")
-            continue
         print("player B :", num)
+        if num >= 31:
+            print("playerA win!")
+            break
     
     if num >= 31:
         break
