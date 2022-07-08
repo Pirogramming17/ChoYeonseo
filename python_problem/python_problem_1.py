@@ -12,3 +12,7 @@ while True:
       else:
         p1 = int(input("1,2,3 중 하나를 선택하세요:"))
     break
+
+for i in range(p1):
+  num+=1
+  print("playerA :", num)
