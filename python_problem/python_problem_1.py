@@ -1,6 +1,6 @@
-# 8단계
+# 9단계
 
-
+import random
 
 def brGame():
         while True:
@@ -21,23 +21,23 @@ def brGame():
 
 num = 0
 while True:
-    player1 = brGame()
-    for i in range(player1):
+    player = brGame()
+    for i in range(player):
         num += 1
-        print("player A :", num)
+        print("player :", num)
         if num >= 31:
-            print("playerB win!")
+            print("computer win!")
             break
         
     if num >= 31:
         break
     
-    player2 = brGame()
-    for j in range(player2):
+    computer = random.randint(1,3)
+    for j in range(computer):
         num+=1
-        print("player B :", num)
+        print("computer :", num)
         if num >= 31:
-            print("playerA win!")
+            print("player win!")
             break
     
     if num >= 31:
