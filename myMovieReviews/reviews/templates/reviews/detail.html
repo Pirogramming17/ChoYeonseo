@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리뷰 상세화면</title>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>
+        <a href="{% url 'reviews:home' %}">
+          my<span>Movie</span>Reviews
+        </a>
+      </h1>
+      <button>
+        <a href={% url 'reviews:create' %}>
+          Add a new Review
+        </a>
+      </button>
+    </div>
+    <article>
+      <div>
+        <image src="https://picsum.photos/id/237/200/300">
+          <h2>
+            {{review.title}}
+          </h2>
+          <spa>
+            <a href="{% url 'reviews:update' review.id %}">
+              수정
+            </a>
+          </spa>
+          <span>
+
+            <a href="{% url 'reviews:delete' review.id %}">
+              삭제
+              <!--<form action="{% url 'reviews:delete' review.id %}" method="post"> {% csrf_token %}-->
+            </a>
+          </form>
+        </span>
+      </div>
+      <p>
+        개봉년도
+        {{review.r_year}}
+      </p>
+      <p>
+        감독
+        {{review.director}}
+      </p>
+      <p>
+        주연
+        {{review.actor}}
+      </p>
+      <p>
+        장르
+        {{review.genre}}
+      </p>
+      <p>
+        별점
+        {{review.grade}}
+      </p>
+      <p>
+        러닝타임
+        {{review.r_time}}
+      </p>
+      <div>
+        {{review.r_content}}
+      </div>
+    </article>
+  </body>
+
+</html>

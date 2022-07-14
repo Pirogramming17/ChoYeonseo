@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <div>
+    <div class="header">
       <h1>
         <a href="{% url 'reviews:home' %}">
           my<span>Movie</span>Reviews
@@ -25,7 +25,9 @@
     {% for review in reviews %}
       <div>
         <h1>
-          {{review.title}}
+          <a href="{% url 'reviews:detail' review.id%}">
+            {{review.title}}
+          </a>
         </h1>
         <p>
           개봉년도:

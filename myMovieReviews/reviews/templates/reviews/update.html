@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>새리뷰 추가</title>
+    <title>리뷰 수정</title>
   </head>
 
   <body>
@@ -23,47 +23,52 @@
     </button>
   </div>
 
-  <form action="{% url 'reviews:create' %}" method="post">
+  <form action="{% url 'reviews:update' review.id %}" method="post">
     {% csrf_token %}
     <div>
       <span>Movie<span>review🍿</div>
         <p>
           제목:
-          <input type="text" name="title">
+          <input type="text" name="title" value="{{review.title}}">
         </p>
         <p>
           개봉년도:
-          <input type="number" name="r_year">
+          <input type="number" name="r_year" value="{{review.r_year}}">
         </p>
         <p>
           장르:
-          <input type="text" name="genre">
+          <input type="text" name="genre" value="{{review.genre}}">
         </p>
         <p>
           별점:
-          <input type="text" name="grade">
+          <input type="text" name="grade" value="{{review.grade}}">
         </p>
         <p>
           러닝타임:
-          <input type="text" name="r_time">
+          <input type="text" name="r_time" value="{{review.r_time}}">
         </p>
         <p>
           리뷰:
-          <input type="text" name="r_content">
+          <textarea name="r_content" id="" cols="100" rows="10">
+            {{review.r_content}}
+          </textarea>
         </p>
         <p>
           감독:
-          <input type="text" name="director">
+          <input type="text" name="director" value="{{review.director}}">
         </p>
         <p>
           배우:
-          <input type="text" name="actor">
+          <input type="text" name="actor" value="{{review.actor}}">
         </p>
 
         <div>
           <input type="submit" value="Save">
         </div>
       </form>
+
+      <a href="{% url 'reviews:home' %}">Home</a>
+
     </body>
 
   </html>
