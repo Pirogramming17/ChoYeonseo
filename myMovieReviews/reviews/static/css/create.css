@@ -1,0 +1,94 @@
+html,
+body,
+div,
+span,
+form,
+p,
+h1,
+h2 {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 30px;
+  height: 60px;
+}
+
+.header .home {
+  font-size: 25px;
+  height: 30px;
+}
+
+.header .home span {
+  color: crimson;
+  font-size: 30px;
+}
+
+.header .add p {
+  font-size: 15px;
+  margin: 10px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.create-form {
+  width: 750px;
+  height: 600px;
+  background: whitesmoke;
+  padding: 20px 100px;
+  margin-top: 20px;
+  border-radius: 1%;
+}
+
+.create-form h2 {
+  font-size: 30px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.create-form h2 span {
+  color: crimson;
+  font-weight: bold;
+}
+
+.create-from hr {
+  border: 0;
+  height: 2px;
+  color: #ccc;
+}
+
+.create-list {
+  padding-top: 30px;
+}
+
+.create-list p {
+  padding-bottom: 10px;
+}
+
+.create-list .create-save {
+  display: flex;
+  justify-content: flex-end;
+}

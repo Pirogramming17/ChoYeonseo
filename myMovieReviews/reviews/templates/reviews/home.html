@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,43 +7,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>홈 화면</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
   </head>
 
   <body>
     <div class="header">
-      <h1>
+      <h1 class="home">
         <a href="{% url 'reviews:home' %}">
           my<span>Movie</span>Reviews
         </a>
       </h1>
-      <button>
+      <p class="add">
         <a href={% url 'reviews:create' %}>
           Add a new Review
         </a>
-      </button>
+      </p>
     </div>
+    <hr>
 
-    {% for review in reviews %}
-      <div>
-        <h1>
-          <a href="{% url 'reviews:detail' review.id%}">
-            {{review.title}}
-          </a>
-        </h1>
-        <p>
-          개봉년도:
-          {{review.r_year}}
-        </p>
-        <p>
-          장르:
-          {{review.genre}}
-        </p>
-        <p>
-          평점:
-          {{review.grade}}
-        </p>
+    <div class="review-list">
+      {% for review in reviews %}
+        <div class="review-card">
+          <span class="review-image">
+            <image src="https://picsum.photos/id/{{id}}/200/250"></span>
+            <h1>
+              <a href="{% url 'reviews:detail' review.id%}">
+                {{review.title}}
+              </a>
+            </h1>
+            <p>
+              <span>
+                개봉년도
+              </span>
+              {{review.r_year}}
+            </p>
+            <p>
+              <span>
+                장르
+              </span>
+              {{review.genre}}
+            </p>
+            <p>
+              <span>
+                평점
+              </span>
+              {{review.grade}}
+            </p>
+          </div>
+        {% endfor %}
       </div>
-    {% endfor %}
-  </body>
+    </body>
 
-</html>
+  </html>

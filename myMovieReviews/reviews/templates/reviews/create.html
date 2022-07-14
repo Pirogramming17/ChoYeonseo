@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,64 +7,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>새리뷰 추가</title>
+    <link rel="stylesheet" href="{% static 'css/create.css' %}">
   </head>
 
   <body>
     <div class="header">
-      <h1>
+      <h1 class="home">
         <a href="{% url 'reviews:home' %}">
           my<span>Movie</span>Reviews
         </a>
-      </hr>
-    </h1>
-    <button>
-      <a href={% url 'reviews:create' %}>
-        Add a new Review
-      </a>
-    </button>
-  </div>
+      </h1>
+      <p class="add">
+        <a href={% url 'reviews:create' %}>
+          Add a new Review
+        </a>
+      </p>
+    </div>
+    <hr>
 
-  <form action="{% url 'reviews:create' %}" method="post">
-    {% csrf_token %}
-    <div>
-      <span>Movie<span>review🍿</div>
-        <p>
-          제목:
-          <input type="text" name="title">
-        </p>
-        <p>
-          개봉년도:
-          <input type="number" name="r_year">
-        </p>
-        <p>
-          장르:
-          <input type="text" name="genre">
-        </p>
-        <p>
-          별점:
-          <input type="text" name="grade">
-        </p>
-        <p>
-          러닝타임:
-          <input type="text" name="r_time">
-        </p>
-        <p>
-          리뷰:
-          <input type="text" name="r_content">
-        </p>
-        <p>
-          감독:
-          <input type="text" name="director">
-        </p>
-        <p>
-          배우:
-          <input type="text" name="actor">
-        </p>
+    <div class="main">
+      <form action="{% url 'reviews:create' %}" method="post" class="create-form">
+        {% csrf_token %}
+        <h2>
+          <span>Movie</span>review🍿</h2>
+        <hr>
+        <div class="create-list">
+          <p>
+            제목:
+            <input type="text" name="title">
+          </p>
+          <p>
+            개봉년도:
+            <input type="number" name="r_year">
+          </p>
+          <p>
+            장르:
+            <input type="text" name="genre">
+          </p>
+          <p>
+            별점:
+            <input type="number" name="grade">
+          </p>
+          <p>
+            러닝타임:
+            <input type="text" name="r_time">
+          </p>
+          <p>
+            <div>
+              리뷰:
+            </div>
+            <textarea name="r_content" id="" cols="80%" rows="10">{{review.r_content}}
+            </textarea>
+          </p>
+          <p>
+            감독:
+            <input type="text" name="director">
+          </p>
+          <p>
+            배우:
+            <input type="text" name="actor">
+          </p>
 
-        <div>
-          <input type="submit" value="Save">
+          <div class="create-save">
+            <input type="submit" value="Save">
+          </div>
         </div>
       </form>
-    </body>
+    </div>
+  </body>
 
-  </html>
+</html>

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,69 +7,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>리뷰 상세화면</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
   </head>
 
   <body>
     <div class="header">
-      <h1>
+      <h1 class="home">
         <a href="{% url 'reviews:home' %}">
           my<span>Movie</span>Reviews
         </a>
       </h1>
-      <button>
+      <p class="add">
         <a href={% url 'reviews:create' %}>
           Add a new Review
         </a>
-      </button>
+      </p>
     </div>
-    <article>
-      <div>
-        <image src="https://picsum.photos/id/237/200/300">
-          <h2>
-            {{review.title}}
-          </h2>
-          <spa>
+    <hr>
+
+    <article class="main">
+      <div class="review-title">
+        <h2>
+          {{review.title}}
+        </h2>
+        <div>
+          <span>
             <a href="{% url 'reviews:update' review.id %}">
               수정
             </a>
-          </spa>
+          </span>
           <span>
-
             <a href="{% url 'reviews:delete' review.id %}">
               삭제
-              <!--<form action="{% url 'reviews:delete' review.id %}" method="post"> {% csrf_token %}-->
             </a>
-          </form>
-        </span>
+          </span>
+        </div>
       </div>
-      <p>
-        개봉년도
-        {{review.r_year}}
-      </p>
-      <p>
-        감독
-        {{review.director}}
-      </p>
-      <p>
-        주연
-        {{review.actor}}
-      </p>
-      <p>
-        장르
-        {{review.genre}}
-      </p>
-      <p>
-        별점
-        {{review.grade}}
-      </p>
-      <p>
-        러닝타임
-        {{review.r_time}}
-      </p>
-      <div>
-        {{review.r_content}}
+    </div>
+    <div class="review-detail">
+      <span class="detail-image">
+        <image src="https://picsum.photos/id/{{id}}/50/270"></span>
+      </span>
+      <div class="detail-info">
+        <p>
+          <span>
+            개봉년도
+          </span>
+          {{review.r_year}}
+          년
+        </p>
+        <p>
+          <span>
+            감독
+          </span>
+          {{review.director}}
+        </p>
+        <p>
+          <span>
+            주연
+          </span>
+          {{review.actor}}
+        </p>
+        <p>
+          <span>
+            장르
+          </span>
+          {{review.genre}}
+        </p>
+        <p>
+          <span>
+            별점
+          </span>
+          {{review.grade}}
+        </p>
+        <p>
+          <span>
+            러닝타임
+          </span>
+          {{review.r_time}}
+          분
+        </p>
       </div>
-    </article>
-  </body>
+    </div>
+    <div class="review-content">
+      {{review.r_content}}
+    </div>
+  </article>
+</body>
 
 </html>
