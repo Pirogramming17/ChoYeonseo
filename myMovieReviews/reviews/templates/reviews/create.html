@@ -42,11 +42,17 @@
           </p>
           <p>
             장르:
-            <input type="text" name="genre">
+            <select name="genre">
+              {% for db_genre, display_genre in genres %}
+                <option value="{{display_genre}}">
+                  {{display_genre}}
+                </option>
+              {% endfor %}
+            </select>
           </p>
           <p>
             별점:
-            <input type="number" name="grade">
+            <input type="number" step="0.1" name="grade">
           </p>
           <p>
             러닝타임:

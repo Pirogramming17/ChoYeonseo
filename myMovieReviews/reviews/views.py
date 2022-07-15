@@ -27,12 +27,20 @@ def create(request):
         
         return redirect("/")
     
-    return render(request, template_name="reviews/create.html", context={})
+    context = {
+        "genres": Review.GENRE_CHOICES
+    }
+    
+    return render(request, template_name="reviews/create.html", context=context)
 
 def detail(request, id):
     review = Review.objects.get(id=id)
+    hour = review.r_time // 60
+    minute = review.r_time % 60
     context = {
-        "review" : review
+        "review" : review,
+        "hour": hour,
+        "minute": minute
     }
     return render(request, template_name="reviews/detail.html", context=context)
 
@@ -54,7 +62,8 @@ def update(request, id):
     elif request.method =="GET":
         review = Review.objects.get(id=id)
         context = {
-            "review":review
+            "review":review,
+            "genres":Review.GENRE_CHOICES
         }
         return render(request, template_name="reviews/update.html", context=context)
 

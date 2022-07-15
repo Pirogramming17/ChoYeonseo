@@ -42,7 +42,13 @@
           </p>
           <p>
             장르:
-            <input type="text" name="genre" value="{{review.genre}}">
+            <select name="genre">
+              {% for db_genre, display_genre in genres %}
+                <option value="{{display_genre}}">
+                  {{display_genre}}
+                </option>
+              {% endfor %}
+            </select>
           </p>
           <p>
             별점:
