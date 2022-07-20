@@ -1,5 +1,13 @@
-{% extends 'ideas/idea_base.html' %}
+{% extends 'ideas/base.html' %}
 {%block content %}
+  <div>
+    <h2>
+      Idea Register
+    </h2>
+    <p>
+      아이디어 등록 페이지입니다. 당신의 아이디어를 잊지 말고 기록하세요!
+    </p>
+  </div>
   <form action="{% url 'ideas:idea_create' %}" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <div>
@@ -31,11 +39,11 @@
         예상 개발툴:
       </p>
       <select name="devtool">
-        {%for idea in ideas%}
-          <option value=''>--------
-          </option>
-          <option value="{{ idea.devtool.name }}">
-            {{ idea.devtool.name }}
+        <option value=''>--------
+        </option>
+        {%for devtool in devtools%}
+          <option value="{{ devtool.name }}">
+            {{devtool.name }}
           </option>
         {% endfor %}
       </select>

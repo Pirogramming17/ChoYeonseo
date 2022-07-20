@@ -1,7 +1,34 @@
-{% extends 'ideas/idea_base.html' %}
+{% extends 'ideas/base.html' %}
 {%block content %}
+  <div>
+    <h2>
+      Idea List
+    </h2>
+    <p>
+      나의 아이디어를 잊지 말고 기록해보세요
+    </p>
+  </div>
   {% for idea in ideas %}
-    <div>성공!</div>
-    <div>{{ idea }}</div>
-  {% endfor %}
-{% endblock %}
+    <div>
+      {%if idea.image %}
+        <p>
+          <img src="{{ idea.image.url }}" style="width:100px; height:100px;"/>
+        </p>
+      {% endif %}
+      <h3>
+        <a href="{% url 'ideas:idea_detail' idea.id%}">
+          {{ idea.title }}
+        </a>
+        <h3>
+          <hr>
+          <p>예상 개발 툴 :
+            {{ idea.devtool }}</p>
+          <p>
+            아이디어 관심도 :
+            {{ idea.interest }}
+          </p>
+
+        </div>
+
+      {% endfor %}
+    {% endblock %}
