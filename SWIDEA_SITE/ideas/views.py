@@ -1,8 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import Devtool, Idea
 
+#idea page view
 def idea_home(request):
-    ideas = Idea.objects.all()
+    sort= request.GET.get('sort', "")
+    if sort == 'title':
+        ideas = Idea.objects.all().order_by('-title')
+    else:
+        ideas = Idea.objects.all()
     context = {
         "ideas" : ideas,
     }

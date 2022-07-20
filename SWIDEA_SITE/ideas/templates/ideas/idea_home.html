@@ -8,8 +8,20 @@
       나의 아이디어를 잊지 말고 기록해보세요
     </p>
   </div>
-  {% for idea in ideas %}
-    <div>
+
+  <form action="{% url 'ideas:idea_home' %}" method="GET">
+    <select name="sort" id="sort">
+      <option value="--정렬기준--">--정렬기준--</option>
+      <option value="like" id="like">찜하기순</option>
+      <option value="register" id="register">등록순</option>
+      <option value="recently" id="recently">최신순</option>
+      <option value="title" id="title">이름순</option>
+    </select>
+    <button type="submit" ,="," value="">정렬</button>
+  </form>
+
+  <div>
+    {% for idea in ideas %}
       {%if idea.image %}
         <p>
           <img src="{{ idea.image.url }}" style="width:100px; height:100px;"/>
@@ -22,7 +34,7 @@
         <h3>
           <hr>
           <p>예상 개발 툴 :
-            {{ idea.devtool }}</p>
+            {{ idea.devtool.name }}</p>
           <p>
             아이디어 관심도 :
             {{ idea.interest }}

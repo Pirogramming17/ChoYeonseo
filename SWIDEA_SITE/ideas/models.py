@@ -11,4 +11,5 @@ class Idea(models.Model):
     content = models.TextField(verbose_name="컨텐츠")
     interest = models.IntegerField(verbose_name="관심도")
     devtool = models.ForeignKey(Devtool, on_delete=models.CASCADE, related_name="idea_devtool" )
-    
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
