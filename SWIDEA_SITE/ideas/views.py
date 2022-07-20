@@ -3,9 +3,14 @@ from .models import Devtool, Idea
 
 #idea page view
 def idea_home(request):
-    sort= request.GET.get('sort', "")
-    if sort == 'title':
-        ideas = Idea.objects.all().order_by('-title')
+    sort= request.GET.get('sort', "None")
+    
+    if sort == 'register':
+        ideas = Idea.objects.all().order_by('created_at')
+    elif sort == 'recently':
+        ideas = Idea.objects.all().order_by('-updated_at')
+    elif sort == 'title':
+        ideas = Idea.objects.all().order_by('title')
     else:
         ideas = Idea.objects.all()
     context = {
@@ -23,7 +28,8 @@ def idea_create(request):
         
         Idea.objects.create(title=title, image=image, content=content, interest=interest, devtool=devtool)
         
-        return redirect("/")
+        curridea = Idea.objects.all().last()
+        return redirect(f"/idea/detail/{curridea.id}")
     
     devtools=Devtool.objects.all()
     context = {
@@ -66,7 +72,7 @@ def idea_delete(request, id):
         return redirect('/')
     
     
-#개발툴 페이지 view   
+#개발툴 page view   
 def devtool_list(request):
     devtools = Devtool.objects.all()
     context={
@@ -81,8 +87,9 @@ def devtool_create(request):
         explain = request.POST["explain"]
         
         Devtool.objects.create(name=name, type=type, explain=explain)
+        currDevtool = Devtool.objects.all().last()
         
-        return redirect("/devtool")
+        return redirect(f"/devtool/detail/{currDevtool.id}")
     
     devtools = Devtool.objects.all()
     context={
@@ -92,8 +99,12 @@ def devtool_create(request):
 
 def devtool_detail(request,id):
     devtool=Devtool.objects.get(id=id)
+    
+    all_ideas = devtool.idea_devtool.all()
+    
     context={
         "devtool":devtool,
+        "all_ideas":all_ideas,
     }
     return render(request, template_name="devtools/devtool_detail.html", context=context)
 

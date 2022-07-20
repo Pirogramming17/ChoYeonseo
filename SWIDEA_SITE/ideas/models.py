@@ -4,7 +4,8 @@ class Devtool(models.Model):
     name = models.CharField(max_length=50, verbose_name="이름")
     type = models.CharField(max_length=50, verbose_name="종류")
     explain = models.TextField(verbose_name="설명")
-
+    
+    
 class Idea(models.Model):
     title = models.CharField(max_length=50, verbose_name="제목") 
     image = models.ImageField(blank=True, upload_to="ideas/%Y%m%d", verbose_name="이미지")

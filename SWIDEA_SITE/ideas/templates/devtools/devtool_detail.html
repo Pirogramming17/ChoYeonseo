@@ -14,6 +14,14 @@
       <p>{{devtool.type}}</p>
       <p>{{devtool.explain}}</p>
     </div>
+    <div>
+      <p>
+        &gt 만들 수 있는 SW 목록
+      </p>
+      {% for idea in all_ideas %}
+        <a href={% url 'ideas:idea_detail' idea.id %}>{{idea.title}}</a>
+      {% endfor %}
+    </div>
   </article>
 
   <div>
